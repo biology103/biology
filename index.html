@@ -71,40 +71,28 @@
     </div>
   </div>
 
-<!-- Secret Modal (hidden by default) -->
-<div id="secretModal" class="modal-bg" onclick="hideSecret()">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <img src="photo_2025-10-11_15-16-22.jpg" alt="Secret Pic" style="width:94%;border-radius:12px;">
-    <div style="font-size:1.12rem;padding:8px 0 0 0;color:#6200ea;">Secret college pic</div>
-    <span class="modal-close" onclick="hideSecret()">×</span>
+  <!-- Secret Modal (hidden by default) -->
+  <div id="secretModal" class="modal-bg" onclick="hideSecret()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <img src="photo_2025-10-11_15-16-22.jpg" alt="Secret Pic" style="width:94%;border-radius:12px;">
+      <div style="font-size:1.12rem;padding:8px 0 0 0;color:#6200ea;">Secret college pic</div>
+      <span class="modal-close" onclick="hideSecret()">×</span>
+    </div>
   </div>
-</div>
 
-<!-- Replace Secret button JS with password protection -->
-<script>
-function showSecret() {
-  // All accepted passwords
-  var valid = [
-    "@RAJ_SIR", "@raj_sir", "@Raj_Sir", "@Raj_sir",
-    "@RAJ SIR", "@raj sir", "@Raj Sir", "@Raj sir"
-  ];
-  var pw = prompt("Enter Secret Password:");
-  if (pw !== null && valid.includes(pw.trim())) {
-    document.getElementById("secretModal").style.display = "flex";
-  } else if (pw !== null) {
-    alert("Wrong password!");
-  }
-}
-function hideSecret() {
-  document.getElementById("secretModal").style.display = "none";
-}
-</script>
-
-
-  <!-- JS for Modal Popup -->
+  <!-- JS for Modal Popup with password protection -->
   <script>
     function showSecret() {
-      document.getElementById("secretModal").style.display = "flex";
+      var valid = [
+        "@RAJ_SIR", "@raj_sir", "@Raj_Sir", "@Raj_sir",
+        "@RAJ SIR", "@raj sir", "@Raj Sir", "@Raj sir"
+      ];
+      var pw = prompt("Enter Secret Password:");
+      if (pw !== null && valid.includes(pw.trim())) {
+        document.getElementById("secretModal").style.display = "flex";
+      } else if (pw !== null) {
+        alert("Wrong password!");
+      }
     }
     function hideSecret() {
       document.getElementById("secretModal").style.display = "none";
@@ -114,8 +102,8 @@ function hideSecret() {
   <div class="credits">
     Batch 9 [2025] -
     <a href="https://www.instagram.com/ur_angshu?igsh=ZnZoMjFzYTBuYW9q" target="_blank" class="btn-shine">Angshu</a>,
-    <a href="https://www.instagram.com/flux_v1rus?igsh=MWx1N2h2YzJzd3RiYQ==" target="_blank" class="btn-shine">Dipshayon</a>
+    <a href="https://www.instagram.com/flux_v1rus?igsh=MWx1N2h2YzJzd3RiYQ==" target="_blank" class="btn-shine">Dipsion</a>
   </div>
+
 </body>
 </html>
-
