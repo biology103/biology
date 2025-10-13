@@ -71,42 +71,14 @@
     </div>
   </div>
 
-   <!-- Secret Modal (hidden by default) -->
-<div id="secretModal" class="modal-bg" style="display:none;" onclick="hideSecret()">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <img id="secretImg" src="photo_2025-10-11_15-16-22.jpg" alt="Secret Pic" style="width:94%;border-radius:12px;display:none;">
-    <div style="font-size:1.12rem;padding:8px 0 0 0;color:#6200ea;">Secret college pic</div>
-    <span class="modal-close" onclick="hideSecret()">×</span>
-    <div id="pwdMsg" style="color:red;display:none;">Incorrect password. Please try again.</div>
+  <!-- Secret Modal (hidden by default) -->
+  <div id="secretModal" class="modal-bg" onclick="hideSecret()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <img src="photo_2025-10-11_15-16-22.jpg" alt="Secret Pic" style="width:94%;border-radius:12px;">
+      <div style="font-size:1.12rem;padding:8px 0 0 0;color:#6200ea;">Secret college pic</div>
+      <span class="modal-close" onclick="hideSecret()">×</span>
+    </div>
   </div>
-</div>
-
-<button onclick="showSecret()">Show Secret</button>
-
-<script>
-function showSecret() {
-  var modal = document.getElementById("secretModal");
-  var secretImg = document.getElementById("secretImg");
-  var pwdMsg = document.getElementById("pwdMsg");
-  var password = prompt("Enter password to view the image:");
-  // Set your password here
-  var correctPassword = "mypassword123";
-  if (password === correctPassword) {
-    secretImg.style.display = "block";
-    pwdMsg.style.display = "none";
-    modal.style.display = "block";
-  } else {
-    secretImg.style.display = "none";
-    pwdMsg.style.display = "block";
-    modal.style.display = "block";
-  }
-}
-
-function hideSecret() {
-  document.getElementById("secretModal").style.display = "none";
-  document.getElementById("pwdMsg").style.display = "none";
-}
-</script>
 
   <!-- JS for Modal Popup -->
   <script>
