@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raj Sir - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Banner and Overlapping DP -->
+  <div class="banner-area">
+    <img src="raj banner.jpg" class="banner" alt="Banner" />
+    <img src="rajsir dp.png" class="profile-pic" alt="Raj Sir DP" />
+  </div>
+
+  <!-- Name tightly beneath DP -->
+  <div class="profile-name">@Raj Sir</div>
+
+  <!-- Bio Card -->
+  <section class="info-card">
+    <div class="card-title">Bio</div>
+    <p>
+     Virasat mein mehnat mili hai,
+            Kahani hum khud Likhenge..........
+    </p>
+  </section>
+
+  <!-- Introduction Card -->
+  <section class="info-card">
+    <div class="card-title">Introduction</div>
+    <p>
+ছোট থেকে যে ব্যক্তির  জীববিদ্যার বই পড়ে  জীব বিদ্যার প্রতি এত টান  আর সেই টানেই  এই জীব বিদ্যাকে ঘিরেই জীবনের পেশা নির্বাচন। অবশেষে  সেই মহান ব্যক্তির অফিসে "সাঁতরাপাবলিকেশন"একাদশ ও দ্বাদশ শ্রেণীর  "LEGAL WRITER " হিসেবে নির্বাচিত হয়ে নিজেকে ভাগ্যবান মনে করছি। 
+    </p>
+  </section>
+
+<!-- Study Photo Gallery and Class Navigation UI -->
+<div class="students-section">
+
+  <div class="gallery-title">Study Time</div>
+
+  <div class="gallery-images">
+    <img src="raj banner.jpg" alt="Study Pic 1" class="batch-pic"/>
+    <img src="raj pic 1.5.jpg" alt="Study Pic 2" class="batch-pic"/>
+    <img src="raj pic 2.jpg" alt="Study Pic 3" class="batch-pic"/>
+  </div>
+
+<div class="contact-card">
+  <div class="contact-header">Contact Info</div>
+  <div class="contact-details-ui">
+    <div class="contact-row">
+      <span class="contact-icon">Phone:-</span>
+      <span class="contact-text">8********</span>
+    </div>
+    <div class="contact-row">
+      <span class="contact-icon">Gmail:-</span>
+      <span class="contact-text">ra*********@gmail.com</span>
+    </div>
+    <div class="contact-links">
+      <a href="https://www.facebook.com/share/1FuqfMMYzY/" target="_blank" class="contact-social fb">Facebook</a>
+      <a href="https://www.instagram.com/raj.chakra.1441?igsh=MWo0N2JvYmgzY2Z6eA==" target="_blank" class="contact-social ig">Instagram</a>
+      <a href="https://wa.me/+918116893158" target="_blank" class="contact-social wa">WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+
+  <div class="class-buttons">
+    <button class="class-btn" onclick="window.open('class9.html', '_blank')">Class 9</button>
+    <button class="class-btn" onclick="window.open('class10.html', '_blank')">Class 10</button>
+    <button class="class-btn" onclick="window.open('class11.html', '_blank')">Class 11</button>
+    <button class="class-btn" onclick="window.open('class12.html', '_blank')">Class 12</button>
+    <button class="class-btn" onclick="window.open('passout.html', '_blank')">Pass Out</button>
+    <button class="class-btn" onclick="showSecret()">Secret</button>
+  </div>
+</div>
+
+<!-- Secret Modal (hidden by default) -->
+<div id="secretModal" class="modal-bg" onclick="hideSecret()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <img src="photo_2025-10-11_15-16-22.jpg" alt="Secret Pic" style="width:94%;border-radius:12px;">
+    <div style="font-size:1.12rem;padding:8px 0 0 0;color:#6200ea;">Secret college pic</div>
+    <span class="modal-close" onclick="hideSecret()">×</span>
+  </div>
+</div>
+
+<!-- JS for Modal Popup -->
+<script>
+function showSecret() {
+  document.getElementById("secretModal").style.display = "flex";
+}
+function hideSecret() {
+  document.getElementById("secretModal").style.display = "none";
+}
+</script>
+
+   <div class="credits">
+    Batch 9 [2025] -
+    <a href="https://www.instagram.com/ur_angshu?igsh=ZnZoMjFzYTBuYW9q" target="_blank" class="btn-shine">Angshu</a>,
+    <a href="https://www.instagram.com/flux_v1rus?igsh=MWx1N2h2YzJzd3RiYQ==" target="_blank" class="btn-shine">Dipsion</a>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
