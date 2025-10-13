@@ -71,14 +71,35 @@
     </div>
   </div>
 
-  <!-- Secret Modal (hidden by default) -->
-  <div id="secretModal" class="modal-bg" onclick="hideSecret()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <img src="photo_2025-10-11_15-16-22.jpg" alt="Secret Pic" style="width:94%;border-radius:12px;">
-      <div style="font-size:1.12rem;padding:8px 0 0 0;color:#6200ea;">Secret college pic</div>
-      <span class="modal-close" onclick="hideSecret()">×</span>
-    </div>
+<!-- Secret Modal (hidden by default) -->
+<div id="secretModal" class="modal-bg" onclick="hideSecret()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <img src="photo_2025-10-11_15-16-22.jpg" alt="Secret Pic" style="width:94%;border-radius:12px;">
+    <div style="font-size:1.12rem;padding:8px 0 0 0;color:#6200ea;">Secret college pic</div>
+    <span class="modal-close" onclick="hideSecret()">×</span>
   </div>
+</div>
+
+<!-- Replace Secret button JS with password protection -->
+<script>
+function showSecret() {
+  // All accepted passwords
+  var valid = [
+    "@RAJ_SIR", "@raj_sir", "@Raj_Sir", "@Raj_sir",
+    "@RAJ SIR", "@raj sir", "@Raj Sir", "@Raj sir"
+  ];
+  var pw = prompt("Enter Secret Password:");
+  if (pw !== null && valid.includes(pw.trim())) {
+    document.getElementById("secretModal").style.display = "flex";
+  } else if (pw !== null) {
+    alert("Wrong password!");
+  }
+}
+function hideSecret() {
+  document.getElementById("secretModal").style.display = "none";
+}
+</script>
+
 
   <!-- JS for Modal Popup -->
   <script>
