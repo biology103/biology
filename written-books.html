@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Written Books - Raj Sir</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .books-main-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0078d7;
+      text-align: center;
+      margin: 36px 0 18px 0;
+      letter-spacing: 0.01em;
+    }
+    .books-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px 26px;
+      justify-content: center;
+      margin-bottom: 34px;
+    }
+    .book-card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 3px 14px #0002;
+      padding: 19px 19px 13px 19px;
+      max-width: 260px;
+      min-width: 210px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .book-card:hover {
+      box-shadow: 0 7px 26px #0078d722;
+    }
+    .book-cover {
+      width: 165px;
+      height: 225px;
+      object-fit: cover;
+      border-radius: 11px;
+      box-shadow: 0 2px 10px #0002;
+      background: #f8faff;
+      margin-bottom: 15px;
+    }
+    .book-title {
+      font-size: 1.15rem;
+      margin: 7px 0 0 0;
+      font-weight: 600;
+      color: #0b2c65;
+    }
+    @media (max-width: 700px) {
+      .books-gallery { gap: 22px 12px; }
+      .book-card { padding: 12px 7px 8px 7px; min-width: 122px; }
+      .book-cover { width: 102px; height: 145px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="books-main-title">Written Books</div>
+  <div class="books-gallery">
+    <div class="book-card">
+      <img src="bp2.jpg" class="book-cover" alt="Rapid Test 2024-11"/>
+      <div class="book-title">MCQ Rapid Test 2024<br>Class 11 (Bengali)</div>
+    </div>
+    <div class="book-card">
+      <img src="book-pic1.jpg" class="book-cover" alt="Rapid Test 2024-11 color"/>
+      <div class="book-title">MCQ Rapid Test 2024<br>(Color Edition)</div>
+    </div>
+    <div class="book-card">
+      <img src="bp4.jpg" class="book-cover" alt="Rapid Test 2025-12"/>
+      <div class="book-title">MCQ Rapid Test 2025<br>Class 12 (Bengali)</div>
+    </div>
+    <div class="book-card">
+      <img src="bp5.jpg" class="book-cover" alt="Rapid Test 2025-12 mono"/>
+      <div class="book-title">MCQ Rapid Test 2025<br>(Monochrome)</div>
+    </div>
+    <div class="book-card">
+      <img src="bp3.jpg" class="book-cover" alt="Jibbidya Bichitra"/>
+      <div class="book-title">Jibbidya Bichitra<br>Ray 3 Martin Class 12</div>
+    </div>
+  </div>
+</body>
+</html>
 
