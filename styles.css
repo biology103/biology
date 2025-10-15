@@ -156,6 +156,31 @@ body {
   margin: 0 auto;
 }
 
+.extra-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 24px auto 12px auto;
+  flex-wrap: wrap;
+}
+.extra-btn {
+  padding: 11px 32px;
+  font-size: 1.09rem;
+  font-weight: 700;
+  border-radius: 26px;
+  border: 2px solid #6436e6;
+  background: #fff;
+  color: #6436e6;
+  box-shadow: 0 2px 9px #0001;
+  cursor: pointer;
+  transition: background 0.18s, color 0.17s;
+  margin: 5px 0;
+}
+.extra-btn:hover {
+  background: #6436e6;
+  color: #fff;
+}
+
 /* Class Navigation Buttons */
 .class-buttons {
   display: flex;
@@ -314,4 +339,5 @@ body {
   .class-btn { width: auto; min-width: 120px;}
   .students-section { margin-bottom: 28px;}
 }
+
 
