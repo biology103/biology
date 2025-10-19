@@ -250,52 +250,6 @@ body {
   100% { background-position: 220px; }
 }
 
-/* ===== TOPPER PAGE VIDEO UI PREVIEW ===== */
-.card__view {
-  position: relative;
-  height: 200px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 15px 15px 0 0;
-  overflow: hidden;
-}
-.preview__video {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.33s;
-  border-radius: inherit;
-  z-index: 2;
-  position: absolute; top: 0; left: 0;
-}
-.card:hover .preview__video {
-  opacity: 1;
-  pointer-events: auto;
-}
-.card__view__data {
-  position: absolute;
-  bottom: 8px;
-  right: 12px;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  z-index: 3;
-}
-.card__play__icon, .card__view__preview, .card__lenght {
-  background: rgba(0,0,0,0.50);
-  color: #eee;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: .96em;
-  padding: 4px 12px;
-  margin: 0 2px;
-}
-.card__view__preview { opacity: .6; }
-.card:hover .card__view__preview { opacity: 1; }
-
-
 /* Responsive */
 @media (max-width: 650px) {
   .banner-area, .banner { height: 84px; }
@@ -307,4 +261,5 @@ body {
   .gallery-images { flex-direction: column; gap: 10px;}
   .extra-buttons { flex-direction: column; gap: 11px;}
 }
+
 
