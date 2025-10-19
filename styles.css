@@ -323,7 +323,7 @@ body {
   .batch-bio-card { max-width: 97vw; padding: 11px 6px; }
 }
 
-/* ====== Topper Card ====== */
+/* ====== Topper Card Full Responsive ====== */
 .card {
   --rounded: 22px;
   --size: 350px;
@@ -441,7 +441,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Channel/topper image and info in a row */
 .card__header {
   display: flex;
   align-items: flex-start;
@@ -525,6 +524,7 @@ body {
   .class-btn { width: auto; min-width: 120px;}
   .students-section { margin-bottom: 28px;}
 }
+
 
 
 
