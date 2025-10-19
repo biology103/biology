@@ -6,175 +6,155 @@
   <title>NEET 2025 Topper: নীহারিকা</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-  /* Responsive video preview for all devices */
-  .card {
-    --rounded: 20px;
-    --size: 340px;
-    width: var(--size);
-    max-width: 97vw;
-    border-radius: var(--rounded);
-    background: #fff;
-    margin: 34px auto;
-    box-shadow: 0 8px 24px rgba(10,36,99,0.13);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Poppins', Arial, sans-serif;
-  }
-  .card__view {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    overflow: hidden;
-  }
-  .preview__video {
-    position: absolute;
-    left: 0; top: 0; width: 100%; height: 100%;
-    object-fit: cover;
-    border: none;
-    border-radius: 0 0 16px 16px;
-    background: #000;
-    transition: opacity 0.37s;
-    opacity: 0;
-    pointer-events: none;
-  }
-  .card:hover .preview__video, /* PC hover show */
-  .card__view.showvideo .preview__video /* Mobile always show */ {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* Always show video on phone/tablet */
-  @media (hover: none) and (pointer: coarse), (max-width: 800px) {
-    .card__view .preview__video {
-      opacity: 1 !important;
-      pointer-events: auto !important;
+    .topper-wrap {
+      width: 100vw;
+      min-height: 100vh;
+      background: #f4f6fa;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 38px;
+      box-sizing: border-box;
     }
-  }
+    .card {
+      max-width: 390px;
+      width: 99vw;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 7px 28px rgba(18,28,79,0.12);
+      overflow: hidden;
+      margin-bottom: 64px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+    .card__view {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px 20px 0 0;
+    }
+    .preview__video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      display: block;
+      background: #222;
+      transition: opacity 0.34s;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute; left: 0; top: 0;
+    }
+    .card:hover .preview__video {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    /* Mobile always show video, no hover */
+    @media (hover: none) and (pointer: coarse), (max-width: 800px) {
+      .preview__video {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        position: static !important;
+      }
+      .card__view { aspect-ratio: auto; }
+    }
 
-  .card__view__data {
-    position: absolute;
-    bottom: 9px; right: 10px;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    z-index: 3;
-  }
-  .card__play__icon, .card__view__preview, .card__lenght {
-    background: rgba(0,0,0,0.45);
-    color: #eee;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: .98em;
-    padding: 4px 11px;
-    margin: 0 2px;
-    pointer-events: none;
-  }
-  .card__view__preview { opacity: .7; }
-  .card:hover .card__view__preview { opacity: 1; }
+    .card__view__data {
+      position: absolute;
+      bottom: 10px; right: 12px;
+      display: flex;
+      gap: 6px;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .card__play__icon, .card__view__preview, .card__lenght {
+      background: rgba(0,0,0,0.52);
+      color: #eee;
+      border-radius: 6px;
+      font-size: .96em;
+      padding: 4px 11px;
+      margin: 0 2px;
+      font-weight: 600;
+    }
+    .card__view__preview { opacity: .6; }
+    .card:hover .card__view__preview { opacity: 1; }
 
-  .card__content {
-    width: 100%;
-    padding: 16px 13px 15px 13px;
-    background: #fff;
-    box-sizing: border-box;
-  }
-  .channel__video__name {
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-bottom: 2px;
-    color: #141b32;
-  }
-  .channel__data {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 2px;
-  }
-  .channel__img {
-    min-width: 37px; min-height: 37px;
-    max-width: 37px; max-height: 37px;
-    border-radius: 50%;
-    background-size: cover; background-position: center;
-    border: 1.5px solid #dfecff;
-    box-shadow: 0 2px 8px #bbe7ff44;
-    margin-top: 2px;
-  }
-  .channel__data__text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1.7px;
-  }
-  .channel__name {
-    font-size: .97em;
-    color: #2f77c5;
-    font-weight: 600;
-    margin-bottom: 3px;
-  }
-  .channel__subdata {
-    display: flex;
-    gap: 16px;
-  }
-  .channel__views, .channel__date {
-    color: #5793ca;
-    font-size: .87em;
-  }
-  .topper-message {
-    color: #22283a;
-    font-size: 1em;
-    line-height: 1.65;
-    margin: 5px 0 0 0;
-    word-break: break-word;
-  }
-  @media (max-width: 600px) {
-    .card { --size: 99vw; margin: 12vw 1vw 4vw 1vw;}
-    .card__content { padding: 11px 6vw 12px 6vw;}
-    .topper-message { font-size: .98em;}
-    .channel__video__name { font-size: 1em;}
-  }
+    .card__content {
+      width: 100%;
+      padding: 17px 18px 15px 18px;
+      background: #fff;
+      box-sizing: border-box;
+      border-radius: 0 0 20px 20px;
+    }
+    .channel__video__name { font-size: 1.08em; font-weight: bold; color: #14232e; margin-bottom: 2px; }
+    .channel__data { display: flex; align-items: center; gap: 12px; margin-bottom: 5px; }
+    .channel__img {
+      min-width: 38px; min-height: 38px;
+      border-radius: 50%;
+      background-size: cover; background-position: center;
+      border: 1px solid #ddeaf8;
+      margin-top: 1px;
+    }
+    .channel__data__text { flex: 1; display: flex; flex-direction: column; }
+    .channel__name { font-size: 1em; color: #2973d1; font-weight: 600; }
+    .channel__subdata { display: flex; gap: 14px; font-size: .96em; color: #6d7fa4;}
+    .topper-message {
+      color: #22283a;
+      font-size: .99em;
+      line-height: 1.62;
+      margin: 6px 0 0 0;
+      word-break: break-word;
+    }
+
+    @media (max-width: 700px) {
+      .card { max-width: 99vw;}
+      .card__content { padding: 14px 5vw 11px 5vw;}
+      .channel__img { min-width: 32px; min-height: 32px;}
+      .channel__video__name { font-size: 1em;}
+      .topper-message { font-size: .97em; }
+    }
   </style>
 </head>
 <body>
-<div class="card">
-  <div class="card__view" style="background-image:url('photo_2025-10-11_15-16-22.jpg')">
-    <video class="preview__video"
-      src="neet1.mp4"
-      poster="photo_2025-10-11_15-16-22.jpg"
-      muted loop controls playsinline
-      style="object-fit: cover;" preload="metadata"></video>
-    <div class="card__view__data">
-      <p class="card__view__preview">Preview</p>
-      <p class="card__play__icon">
-        <svg width="13px" height="13px" viewBox="-0.5 0 7 7"><g fill="none" fill-rule="evenodd"><g fill="#000"><g><path fill="#EAECEE" d="M296.494737,3608.57322 L292.500752,3606.14219 C291.83208,3605.73542 291,3606.25002 291,3607.06891 L291,3611.93095 C291,3612.7509 291.83208,3613.26444 292.500752,3612.85767 L296.494737,3610.42771 C297.168421,3610.01774 297.168421,3608.98319 296.494737,3608.57322"/></g></g></g></svg>
-      </p>
-      <p class="card__lenght">10:19</p>
-    </div>
-  </div>
-  <div class="card__content">
-    <p class="channel__video__name">NEET 2025: সফল ছাত্রী নীহারিকা</p>
-    <div class="channel__data">
-      <div class="channel__img" style="background-image:url('rajsir dp.png');"></div>
-      <div class="channel__data__text">
-        <p class="channel__name">বায়োলজি @রাজ স্যার</p>
-        <div class="channel__subdata">
-          <p class="channel__views">519.7K Views</p>
-          <p class="channel__date">2025</p>
+  <div class="topper-wrap">
+    <div class="card">
+      <div class="card__view" style="background-image:url('photo_2025-10-11_15-16-22.jpg')">
+        <video class="preview__video"
+          src="neet1.mp4"
+          poster="photo_2025-10-11_15-16-22.jpg"
+          muted loop controls playsinline
+          style="object-fit: cover;" preload="metadata"></video>
+        <div class="card__view__data">
+          <p class="card__view__preview">Preview</p>
+          <p class="card__play__icon">
+            <svg width="14px" height="14px" viewBox="-0.5 0 7 7"><g fill="none" fill-rule="evenodd"><g fill="#000"><g><path fill="#EAECEE" d="M296.494737,3608.57322 L292.500752,3606.14219 C291.83208,3605.73542 291,3606.25002 291,3607.06891 L291,3611.93095 C291,3612.7509 291.83208,3613.26444 292.500752,3612.85767 L296.494737,3610.42771 C297.168421,3610.01774 297.168421,3608.98319 296.494737,3608.57322"/></g></g></g></svg>
+          </p>
+          <p class="card__lenght">10:19</p>
+        </div>
+      </div>
+      <div class="card__content">
+        <p class="channel__video__name">NEET 2025: সফল ছাত্রী নীহারিকা</p>
+        <div class="channel__data">
+          <div class="channel__img" style="background-image:url('rajsir dp.png');"></div>
+          <div class="channel__data__text">
+            <p class="channel__name">বায়োলজি @রাজ স্যার</p>
+            <div class="channel__subdata">
+              <p class="channel__views">519.7K Views</p>
+              <p class="channel__date">2025</p>
+            </div>
+          </div>
+        </div>
+        <div class="topper-message">
+          <b>NEET 2025</b><br>
+          [translate:এখনো অনলাইন - এ জ্বলজ্বল করছে ছোট্ট ছোট্ট পায়ে পড়তে আসা নীহারিকা আজকে গলায় স্টেথোস্কোপ ঝুলিয়ে দেশ ও দশের সেবায় নিজেকে নিয়োজিত করবে। ... ঈশ্বর তোমাকে এই কার্যে আরও দক্ষ করে তুলুক এই কামনা থাকলো।]
+          <br><span style="font-weight:500;">বায়োলজি @রাজ স্যার</span>
         </div>
       </div>
     </div>
-    <div class="topper-message">
-      <b>NEET 2025</b><br>
-      [translate:এখনো অনলাইন - এ জ্বলজ্বল করছে ছোট্ট ছোট্ট পায়ে পড়তে আসা নীহারিকা আজকে গলায় স্টেথোস্কোপ ঝুলিয়ে দেশ ও দশের সেবায় নিজেকে নিয়োজিত করবে। ... ঈশ্বর তোমাকে এই কার্যে আরও দক্ষ করে তুলুক এই কামনা থাকলো।]
-      <br><span style="font-weight:500;">বায়োলজি @রাজ স্যার</span>
-    </div>
   </div>
-</div>
 </body>
 </html>
-
