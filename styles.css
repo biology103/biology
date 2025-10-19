@@ -249,18 +249,36 @@ body {
   100% { background-position: 220px; }
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #f4f6fa;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* ====== Topper Card ====== */
 .card {
   --rounded: 22px;
   --size: 350px;
   width: var(--size);
-  min-height: 420px;
+  min-height: 440px;
   border-radius: var(--rounded);
   background: #fff;
   position: relative;
   overflow: hidden;
-  margin: 0 16px 32px 16px;
-  box-shadow: 0 8px 24px rgba(10,36,99,0.15);
+  margin: 38px 16px 32px 16px;
+  box-shadow: 0 8px 24px rgba(10,36,99,0.13);
+  display: flex;
+  flex-direction: column;
 }
 
 .card::before {
@@ -281,7 +299,6 @@ body {
     radial-gradient(at 56% 52%, hsla(109,71%,61%,1) 0, transparent 50%);
   z-index: 0;
 }
-
 .card::after {
   --size: 100%;
   content: "";
@@ -293,10 +310,9 @@ body {
 }
 
 .card__view {
-  position: absolute;
+  position: relative;
   height: 52%;
   width: 100%;
-  left: 0; top: 0;
   z-index: 2;
   background-size: cover;
   display: flex;
@@ -314,8 +330,11 @@ body {
   border: none;
   transition: opacity 350ms;
   border-radius: 0 0 18px 18px;
+  z-index: 2;
 }
-.card:hover .card__view video {
+.card:hover .card__view video,
+.card__view video:focus,
+.card__view video:active {
   opacity: 1;
   pointer-events: auto;
 }
@@ -351,26 +370,26 @@ body {
   opacity: 1;
   transform: translateY(0px);
 }
-
 .card__content {
-  position: absolute;
   z-index: 4;
   width: 100%;
   height: 48%;
   left: 0; right: 0; bottom: 0;
-  padding: 20px 16px 10px 16px;
+  padding: 22px 14px 10px 16px;
   color: #000;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   background: rgba(255,255,255,0.94);
   box-sizing: border-box;
+  position: relative;
 }
 
+/* Channel/topper image and info in a row */
 .card__header {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 13px;
   margin-bottom: 7px;
 }
 
@@ -406,7 +425,7 @@ body {
   margin-bottom: 4px;
 }
 .channel__views, .channel__date {
-  font-size: 0.85em;
+  font-size: 0.88em;
   color: #5a6fa6;
 }
 
@@ -414,8 +433,18 @@ body {
   font-size: 1em;
   color: #22283a;
   line-height: 1.68;
-  margin: 4px 0 0 0;
+  margin: 7px 0 0 0;
   word-break: break-word;
+}
+
+/* Fully Responsive */
+@media (max-width: 600px) {
+  .card {
+    --size: 97vw;
+    margin: 23px 1vw 15px 1vw;
+    min-height: 340px;
+  }
+  .card__content { padding: 10px 6vw 7px 6vw; }
 }
 
 /* Responsiveness Mobile/Tablet/Desktop */
@@ -446,3 +475,4 @@ body {
   .class-btn { width: auto; min-width: 120px;}
   .students-section { margin-bottom: 28px;}
 }
+
