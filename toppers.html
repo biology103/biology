@@ -6,17 +6,18 @@
   <title>NEET Topper: Niharika</title>
   <style>
 /* From Uiverse.io by EddyBel */
+/* Main card styling (exactly as your CSS) */
 body {
-  background: #f2f5ff;
+  background: #f7fbfc;
+  padding: 44px 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   min-height: 100vh;
   font-family: 'Poppins', Arial, sans-serif;
 }
 .card {
   --rounded: 20px;
-  --size: 290px;
+  --size: 270px;
   width: var(--size);
   height: calc(var(--size) - 10px);
   border-radius: var(--rounded);
@@ -24,9 +25,8 @@ body {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  margin-top: 48px;
-  margin-bottom: 48px;
-  box-shadow: 0 8px 28px rgba(50, 50, 93, 0.12), 0 1.5px 6px rgba(0,0,0,0.14);
+  margin: 0 16px 32px 16px;
+  box-shadow: 0 8px 22px rgba(10,36,99,0.15);
 }
 .card::before {
   --size: 100%;
@@ -51,14 +51,14 @@ body {
   position: absolute;
   width: var(--size);
   height: var(--size);
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255,255,255,0.5);
 }
+
+/* Video/preview cover section */
 .card__view {
   position: absolute;
   height: 55%;
-  left: 0;
-  top: 0;
-  right: 0;
+  left: 0; top: 0; right: 0;
   margin: auto;
   z-index: 1;
   background-image: linear-gradient(to right bottom, #fff, #e2e2e2);
@@ -66,21 +66,26 @@ body {
   background-size: cover;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  align-items: flex-end;
 }
-.card__view iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
+
+/* Show video ONLY on hover */
+.card__view video {
   position: absolute;
-  top: 0; left: 0;
-  pointer-events: none;
+  width: 100%; height: 100%;
+  left: 0; top: 0;
+  object-fit: cover;
   opacity: 0;
-  transition: opacity 0.3s;
+  pointer-events: none;
+  transition: opacity 300ms;
+  border: none;
 }
-.card:hover .preview__video {
+.card:hover .card__view video {
   opacity: 1;
-  pointer-events: all;
+  pointer-events: auto;
 }
+
 .card__view__data {
   position: absolute;
   bottom: 0;
@@ -89,16 +94,15 @@ body {
   justify-content: flex-end;
   gap: 10px;
   padding: 8px;
-  box-sizing: border-box;
   pointer-events: none;
 }
 .card__lenght, .card__play__icon, .card__view__preview {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.5);
   padding: 5px;
   border-radius: 6px;
-  font-size: 0.7em;
+  font-size: 0.6em;
   font-weight: bold;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255,255,255,0.7);
 }
 .card__play__icon {
   display: flex;
@@ -115,114 +119,121 @@ body {
   opacity: 1;
   transform: translateY(0px);
 }
+
+/* Content area */
 .card__content {
   position: absolute;
   z-index: 2;
   width: 100%;
-  height: 45%;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  height: 40%;
+  left: 0; right: 0; bottom: 0;
   padding-left: 9px;
   padding-right: 9px;
   color: #000;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: rgba(255,255,255,0.82);
 }
+
 .channel__video__name {
   font-size: 1em;
-  margin: 10px 0 6px 0;
+  margin-bottom: 8px;
   font-weight: bold;
-  color: #222;
+  color: #000;
 }
+
 .channel__data {
   display: flex;
   align-items: center;
   width: 100%;
   gap: 10px;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
+
+/* Channel picture (change to your local image if wanted) */
 .channel__img {
   --size-channel: 35px;
   --rounded: 50%;
+  --duration: 300ms;
   min-width: var(--size-channel);
   min-height: var(--size-channel);
   border-radius: var(--rounded);
-  background-color: #99cfff;
+  transition: transform var(--duration);
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  border: 2px solid #fff6;
-  box-shadow: 0 2px 8px #7cdfff33;
+  background-color: #99cfff;
+  background-image: url('rajsir%20dp.png'); /* <-- Change to your channel/logo image */
 }
+
+.channel__img:hover { transform: scale(1.08); }
+
 .channel__data__text {
   display: flex;
   flex-direction: column;
   gap: 3px;
   width: 100%;
 }
+
 .channel__subdata {
   display: flex;
   gap: 10px;
 }
+
 .channel__name {
-  font-size: 0.93em;
-  color: #1d44a3;
+  font-size: 0.9em;
   font-weight: 600;
+  color: #1757af;
 }
-.channel__views, .channel__date {
-  font-size: 0.78em;
-}
-/* Responsive */
+
+.channel__views, .channel__date { font-size: 0.7em; }
+
 @media (max-width: 545px) {
-  .card {
-    --size: 97vw;
-    margin-top: 16px;
-    margin-bottom: 30px;
-  }
+  .card { --size: 97vw; }
 }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="card__view" style="background-image:url('photo_2025-10-11_15-16-22.jpg');">
-      <!-- NEET topper preview: replace src with video link id -->
-      <iframe class="preview__video" src="https://www.youtube.com/embed/IMiK8yNRbL0?autoplay=1&mute=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      <div class="card__view__data">
-        <p class="card__view__preview">Preview</p>
-        <p class="card__play__icon">
-          <svg width="20px" height="20px" viewBox="-0.5 0 7 7" version="1.1">
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="Dribbble-Light-Preview" transform="translate(-347.000000, -3766.000000)" fill="#000000">
-                <g id="icons" transform="translate(56.000000, 160.000000)">
-                  <path fill="#EAECEE" d="M296.494737,3608.57322 L292.500752,3606.14219 C291.83208,3605.73542 291,3606.25002 291,3607.06891 L291,3611.93095 C291,3612.7509 291.83208,3613.26444 292.500752,3612.85767 L296.494737,3610.42771 C297.168421,3610.01774 297.168421,3608.98319 296.494737,3608.57322"/>
-                </g>
+<div class="card">
+
+  <div class="card__view" style="background-image:url('photo_2025-10-11_15-16-22.jpg'); background-size:cover;">
+    <!-- VIDEO: local file neet1.mp4, shown ONLY on hover! -->
+    <video class="preview__video" src="neet1.mp4" muted loop></video>
+    <div class="card__view__data">
+      <p class="card__view__preview">Preview</p>
+      <p class="card__play__icon">
+        <svg width="8px" height="8px" viewBox="-0.5 0 7 7" version="1.1">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Dribbble-Light-Preview" transform="translate(-347.000000, -3766.000000)" fill="#000000">
+              <g id="icons" transform="translate(56.000000, 160.000000)">
+                <path fill="#EAECEE" d="M296.494737,3608.57322 L292.500752,3606.14219 C291.83208,3605.73542 291,3606.25002 291,3607.06891 L291,3611.93095 C291,3612.7509 291.83208,3613.26444 292.500752,3612.85767 L296.494737,3610.42771 C297.168421,3610.01774 297.168421,3608.98319 296.494737,3608.57322"/>
               </g>
             </g>
-          </svg>
-        </p>
-        <p class="card__lenght">4:39</p>
-      </div>
-    </div>
-    <div class="card__content">
-      <p class="channel__video__name">NEET 2025: সফল ছাত্রী নীহারিকা</p>
-      <div class="channel__data">
-        <div class="channel__img" style="background-image:url('rajsir%20dp.png');"></div>
-        <div class="channel__data__text">
-          <p class="channel__name">বায়োলজি @রাজ স্যার</p>
-          <div class="channel__subdata">
-            <p class="channel__views">243K Views</p>
-            <p class="channel__date">2025</p>
-          </div>
-        </div>
-      </div>
-      <div style="font-size:0.93em;margin-top:8px;line-height:1.7; color:#233;">
-        <b>NEET 2025</b><br>
-        [translate:এখনো অনলাইন - এ জ্বলজ্বল করছে ছোট্ট ছোট্ট পায়ে পড়তে আসা নীহারিকা আজকে গলায় স্টেথোস্কোপ ঝুলিয়ে দেশ ও দশের সেবায় নিজেকে নিয়োজিত করবে। গর্ব অনুভব করছি তোমাকে ছাত্রী হিসেবে পেয়ে, আগামী তে অনেক অনেক উচ্চ স্থানে পৌঁছে যাও ভালো থেকো মানুষের মতো মানুষ হয়ে ওঠো। অনেক অনেক শুভেচ্ছা থাকলো। ঈশ্বর তোমাকে এই কার্যে আরও দক্ষ করে তুলুক এই কামনা থাকলো।]
-        <br><span style="font-weight:500;">বায়োলজি @রাজ স্যার</span>
-      </div>
+          </g>
+        </svg>
+      </p>
+      <p class="card__lenght">10:19</p>
     </div>
   </div>
+
+  <div class="card__content">
+    <p class="channel__video__name">NEET 2025: সফল ছাত্রী নীহারিকা</p>
+    <div class="channel__data">
+      <div class="channel__img"></div>
+      <div class="channel__data__text">
+        <p class="channel__name">বায়োলজি @রাজ স্যার</p>
+        <div class="channel__subdata">
+          <p class="channel__views">519.7K Views</p>
+          <p class="channel__date">2025</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-size:0.96em;line-height:1.7;color:#2C2C2F">
+      <b>NEET 2025</b><br>
+      [translate:এখনো অনলাইন - এ জ্বলজ্বল করছে ছোট্ট ছোট্ট পায়ে পড়তে আসা নীহারিকা আজকে গলায় স্টেথোস্কোপ ঝুলিয়ে দেশ ও দশের সেবায় নিজেকে নিয়োজিত করবে। গর্ব অনুভব করছি তোমাকে ছাত্রী হিসেবে পেয়ে, আগামী তে অনেক অনেক উচ্চ স্থানে পৌঁছে যাও ভালো থেকো মানুষের মতো মানুষ হয়ে ওঠো। অনেক অনেক শুভেচ্ছা থাকলো। ঈশ্বর তোমাকে এই কার্যে আরও দক্ষ করে তুলুক এই কামনা থাকলো।]
+      <br><span style="font-weight:500;">বায়োলজি @রাজ স্যার</span>
+    </div>
+  </div>
+</div>
 </body>
 </html>
