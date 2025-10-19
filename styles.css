@@ -1,8 +1,4 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   background: #f4f6fa;
@@ -85,9 +81,7 @@ body {
   margin-bottom: 13px;
   color: #6d42ec;
 }
-.contact-details-ui {
-  margin-bottom: 7px;
-}
+.contact-details-ui { margin-bottom: 7px; }
 .contact-row {
   display: flex;
   align-items: center;
@@ -95,9 +89,7 @@ body {
   gap: 8px;
   margin: 5px 0 7px 0;
 }
-.contact-icon {
-  font-size: 1.18em;
-}
+.contact-icon { font-size: 1.18em; }
 .contact-text {
   font-size: 1.01em;
   color: #444;
@@ -122,14 +114,10 @@ body {
   box-shadow: 0 1px 6px #0001;
   transition: background 0.18s, color 0.14s, border 0.18s;
 }
-.contact-social.fb { border-color: #3b5998; color: #3b5998; }
-.contact-social.ig { border-color: #c13584; color: #c13584; }
-.contact-social.wa { border-color: #25d366; color: #25d366; }
-.contact-social:hover {
-  background: #1a99ff;
-  color: #fff;
-  border-color: #1a99ff;
-}
+.contact-social.fb { border-color: #3b5998; color: #3b5998;}
+.contact-social.ig { border-color: #c13584; color: #c13584;}
+.contact-social.wa { border-color: #25d366; color: #25d366;}
+.contact-social:hover { background: #1a99ff; color: #fff; border-color: #1a99ff; }
 .contact-social.fb:hover { background: #3b5998; }
 .contact-social.ig:hover { background: #c13584; }
 .contact-social.wa:hover { background: #25d366; }
@@ -162,6 +150,7 @@ body {
   margin: 0 auto;
 }
 
+/* Extra Buttons */
 .extra-buttons {
   display: flex;
   gap: 16px;
@@ -182,10 +171,7 @@ body {
   transition: background 0.18s, color 0.17s;
   margin: 5px 0;
 }
-.extra-btn:hover {
-  background: #6436e6;
-  color: #fff;
-}
+.extra-btn:hover { background: #6436e6; color: #fff; }
 
 /* Class Navigation Buttons */
 .class-nav-title {
@@ -223,7 +209,6 @@ body {
   color: #fff;
 }
 
-/* Shining Batch Names (Btn) */
 .btn-shine {
   padding: 0 13px;
   font-weight: 700;
@@ -231,9 +216,7 @@ body {
   cursor: pointer;
   background: linear-gradient(
     to right,
-    #9370db 28%,   /* Purple zone */
-    #fff 55%,      /* White highlight centered */
-    #9370db 72%
+    #9370db 28%, #fff 55%, #9370db 72%
   );
   background-size: 220px 100%;
   background-clip: text;
@@ -250,6 +233,42 @@ body {
   100% { background-position: 220px; }
 }
 
+/* Modal/Secret fix */
+.modal-bg {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(60,32,80,0.30);
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 40px #0003;
+  padding: 18px 14px 12px 14px;
+  text-align: center;
+  max-width: 330px;
+  position: relative;
+}
+.modal-close {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #9370db;
+  position: absolute;
+  right: 14px;
+  top: 2px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.modal-close:hover { color: #222; }
+.credits {
+  text-align: center;
+  font-size: 1rem;
+  margin: 34px auto 38px auto;
+}
+
 /* Responsive */
 @media (max-width: 650px) {
   .banner-area, .banner { height: 84px; }
@@ -261,5 +280,3 @@ body {
   .gallery-images { flex-direction: column; gap: 10px;}
   .extra-buttons { flex-direction: column; gap: 11px;}
 }
-
-
