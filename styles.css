@@ -1,8 +1,13 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
   background: #f4f6fa;
   font-family: 'Poppins', Arial, sans-serif;
   color: #333;
+  min-height: 100vh;
 }
 
 /* Banner/Profile Section */
@@ -244,86 +249,7 @@ body {
   100% { background-position: 220px; }
 }
 
-/* Secret Modal */
-.modal-bg {
-  display: none;
-  position: fixed;
-  z-index: 99;
-  left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(60,32,80,0.30);
-  align-items: center;
-  justify-content: center;
-}
-.modal-content {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 5px 40px #0003;
-  padding: 18px 14px 12px 14px;
-  text-align: center;
-  max-width: 330px;
-  position: relative;
-}
-.modal-close {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #9370db;
-  position: absolute;
-  right: 14px;
-  top: 2px;
-  cursor: pointer;
-  transition: color 0.15s;
-}
-.modal-close:hover {
-  color: #222;
-}
-
-.batch-section {
-  text-align: center;
-  margin: 0 0 20px 0;
-}
-.batch-pic {
-  width: 92vw;
-  max-width: 340px;
-  display: block;
-  margin: 0 auto 13px auto;
-  border-radius: 13px;
-  box-shadow: 0 3px 18px #0001;
-  object-fit: cover;
-}
-.batch-title {
-  font-size: 1.28rem;
-  font-weight: 700;
-  color: #6d42ec;
-  margin-bottom: 13px;
-  margin-top: 6px;
-}
-.batch-bio-card {
-  background: #fff;
-  padding: 17px 12px;
-  max-width: 330px;
-  margin: 0 auto 10px auto;
-  border-radius: 11px;
-  box-shadow: 0 1px 9px #0001;
-}
-.batch-bio-title {
-  font-size: 1.01rem;
-  font-weight: 700;
-  color: #0078d7;
-  margin-bottom: 8px;
-}
-.batch-bio-card p {
-  font-size: 0.98rem;
-  color: #484f56;
-  line-height: 1.55;
-  text-align: left;
-}
-@media (max-width: 480px) {
-  .batch-pic { max-width: 97vw; }
-  .batch-title { font-size: 1rem; }
-  .batch-bio-card { max-width: 97vw; padding: 11px 6px; }
-}
-
-/* ====== Topper Card Full Responsive ====== */
+/* ====== Topper Card ====== */
 .card {
   --rounded: 22px;
   --size: 350px;
@@ -492,15 +418,6 @@ body {
   word-break: break-word;
 }
 
-@media (max-width: 500px) {
-  .card {
-    --size: 98vw;
-    min-height: 68vw;
-  }
-  .card__content { padding: 17px 6vw 10px 6vw; }
-}
-
-
 /* Responsiveness Mobile/Tablet/Desktop */
 @media (max-width: 480px) {
   .banner-area, .banner { height: 84px; }
@@ -515,6 +432,11 @@ body {
   .batch-pic { max-width: 96vw; }
   .class-btn { font-size: .98rem; padding: 10px 0; }
   .modal-content { max-width: 97vw; }
+  .card {
+    --size: 98vw;
+    min-height: 68vw;
+  }
+  .card__content { padding: 17px 6vw 10px 6vw; }
 }
 
 /* Tablet/Desktop: gallery and nav buttons row */
@@ -524,10 +446,3 @@ body {
   .class-btn { width: auto; min-width: 120px;}
   .students-section { margin-bottom: 28px;}
 }
-
-
-
-
-
-
-
